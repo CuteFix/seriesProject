@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Appenders>
+        <File name="file" fileName="all.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="filee" fileName="info.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="fileee" fileName="trace.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="fileeee" fileName="debug.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+            </PatternLayout>
+        </File>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="[%-5level] %d{yyyyMMdd-HHmmss} [%t] %M- %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="file" level="all"/>
+            <AppenderRef ref="filee" level="info"/>
+            <AppenderRef ref="fileee" level="trace"/>
+            <AppenderRef ref="fileeee" level="debug"/>
+            <AppenderRef ref="console" level="all"/>
+            <AppenderRef ref="rollingfile" level="all"/>
+        </Root>
+    </Loggers>
+</Configuration>
